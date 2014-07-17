@@ -1,0 +1,79 @@
+a { text-decoration: none; }
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    width: 250px;
+}
+
+.bubble::before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.bubble.tcrf-bubble-login {
+    margin-top: 20px;
+}
+
+.me {   
+    margin: 5px 45px 5px 20px;       
+}
+
+.me::before {
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px;           
+}
+
+.tcrf-form-table {
+    float: left;
+    width: auto;
+}
+
+.alert-box {
+    color:#555;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+    padding:10px 36px;
+    margin: 30px 0px;
+    width: 30%;
+}
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+.error-box {
+    background:#ffecec url('../../images/error.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+.success-box {
+    background:#e9ffd9 url('../../images/success.png') no-repeat 10px 50%;
+    border:1px solid #a6ca8a;
+}
+.warning-box {
+    background:#fff8c4 url('../../images/warning.png') no-repeat 10px 50%;
+    border:1px solid #f2c779;
+}
+.notice-box {
+    background:#e3f7fc url('../../images/notice.png') no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
+}
+
+p.tcrf-register-now {
+    text-align: center; 
+    margin: 5px 0px 0px 0px; 
+}
