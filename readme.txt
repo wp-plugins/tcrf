@@ -100,4 +100,6 @@ Ordered list:
 1. 24/7 customer support
 1. Know more about your visitors
 
-Here's a link to [The Client Relations Factory](http://www.theclientrelationfactory.com/ "A Virtual Robot on your website")
+Here's a link to [The Client Relations Factory](http://www.theclientrelationsfactory.com/ "A Virtual Robot on your website")
+
+
