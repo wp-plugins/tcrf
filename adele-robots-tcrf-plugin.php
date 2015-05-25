@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 /**
  * Plugin Name: The Client Relations Factory
  * Plugin URI: http://www.theclientrelationsfactory.com/
@@ -9,6 +10,8 @@
  * Author URI: http://www.adelerobots.com/
  * License: GPLv3
  */
+
+include_once("config-manager.php");
 
 ar_tcrf_init();
 
@@ -153,7 +156,7 @@ function ar_tcrf_login()
         update_option('ar_tcrf_account_data', 
             array(
                     'username' => $username,
-		    'avatar_type' => $response->avatar_type,
+		    		'avatar_type' => $response->avatar_type,
                     'avatar_id' => $response->avatar_id,
                     'avatar_name' => $response->avatar_name,
                     'avatar_password' => $response->avatar_password,
@@ -161,6 +164,7 @@ function ar_tcrf_login()
                     'window_size' => 'Big',
                     'allow_camera' => false,
                     'button_text' => 'Chat with me!'
+				
                 )
         );
         
@@ -174,13 +178,17 @@ function ar_tcrf_login()
 
 function get_scriptlet_data($username, $password)
 {
+    
+    $ar_tcrf_option_manager = new ConfigManager("config.ini");
+    $scriplet_service_url  = $ar_tcrf_option_manager->get_option('scriptlet_service_url');
+    //$scriplet_service_url = 'http://www.theclientrelationsfactory.com/services/scriptlet-generator/get-data.php';
+    //$scriplet_service_url = 'http://adele01.treelogic.local/services/scriptlet-generator/get-data.php';
+
     $public_key = file_get_contents(plugin_dir_path(__FILE__) . 'pub.key');
 
     $login_data = json_encode(array('username' => $username, 'password' => $password));
 
     openssl_public_encrypt($login_data, $login_data, $public_key);
-
-    $scriplet_service_url = 'http://www.theclientrelationsfactory.com/services/scriptlet-generator/get-data.php';
 
     $response = wp_remote_post($scriplet_service_url, array(
 		'method' => 'POST',
@@ -200,7 +208,16 @@ function get_scriptlet_data($username, $password)
 
 function ar_tcrf_insert_scriptlet()
 {
-    include(plugin_dir_path(__FILE__) . '/generate-scriptlet.php');
+	$ar_tcrf_account_data = get_option('ar_tcrf_account_data');
+
+	if($ar_tcrf_account_data['avatar_type'] == 4 || $ar_tcrf_account_data['avatar_type'] == 5)
+	{
+    	    include(plugin_dir_path(__FILE__) . '/generate-scriptlet-chat.php');
+	}
+	else
+    	{
+            include(plugin_dir_path(__FILE__) . '/generate-scriptlet-3d.php');
+	}   
 }
 
 function ar_tcrf_show_login_view($error_message = false)
@@ -211,7 +228,7 @@ function ar_tcrf_show_login_view($error_message = false)
 function ar_tcrf_show_settings_view($error_message = false)
 {
     $ar_tcrf_account_data = get_option('ar_tcrf_account_data');
-    
+
     if($ar_tcrf_account_data['avatar_type'] == 4 || $ar_tcrf_account_data['avatar_type'] == 5)
     {
         include(plugin_dir_path(__FILE__) . '/views/settings-form-chat.php');
