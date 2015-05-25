@@ -20,7 +20,8 @@
 <table class="form-table">
     <form method="post" id="ar_tcrf_vr_settings">
     	<input type="hidden" name="ar_tcrf_action" value="enable-scriptlet">
-        <tr valign="top">
+        <input type="hidden" name="ar_tcrf_window_size" value="chat" title="Sets the size of your Virtual Robot display frame" />
+	<tr valign="top">
             <th scope="row">Start Button Text</th>
             <td>
                 <input type="text" name="ar_tcrf_start_button_text" minlength="1" maxlength="15"
@@ -36,23 +37,14 @@
             <th scope="row">Chat Button Text</th>
             <td>
                 <input type="text" name="ar_tcrf_chat_button_text" minlength="1" maxlength="10"
-                	value="<?php echo isset($ar_tcrf_account_data['chat_button_text']) ? $ar_tcrf_account_data['chat_button_text'] : "Send" ?>" 
+                	value="<?php echo isset($ar_tcrf_account_data['chat_button_text']) ? $ar_tcrf_account_data['chat_button_text'] : 'Send' ; ?> 
+		"
+		
                 <?php 
                     if ($ar_tcrf_account_data['scriptlet_enabled']) echo " readonly "; 
                 ?>
                 title="Defines the text that will be displayed into the Send button of Virtual Robot chat dialog"
                 > 
-            </td>
-        </tr>
-        <tr valign="top">
-            <th scope="row">Avatar Size</th>
-            <td>
-                <input type="hidden" name="ar_tcrf_window_size"
-                <?php 
-                    if (strcasecmp($ar_tcrf_account_data['window_size'], "chat") == 0) echo " selected "; 
-                ?>
-                value="chat" title="Sets the size of your Virtual Robot display frame"
-		>
             </td>
         </tr>
         <tr valign="top">
