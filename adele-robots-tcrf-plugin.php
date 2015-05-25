@@ -5,7 +5,7 @@ ini_set("display_errors", 1);
  * Plugin Name: The Client Relations Factory
  * Plugin URI: http://www.theclientrelationsfactory.com/
  * Description: This plugin let you have your own Virtual Robot from TCRF fully integrated within WordPress.
- * Version: 1.0
+ * Version: 2.0
  * Author: Adele Robots Inc
  * Author URI: http://www.adelerobots.com/
  * License: GPLv3
