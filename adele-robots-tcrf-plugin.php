@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+//error_reporting(E_ALL);
+//ini_set("display_errors", 1);
 /**
  * Plugin Name: The Client Relations Factory
  * Plugin URI: http://www.theclientrelationsfactory.com/
