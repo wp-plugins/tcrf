@@ -38,13 +38,14 @@ Chrome - All versions
 * New Knowledge Editor. You can define different topics and its questions and answers in an easy way. You can also define more than one initial sentence and default answers.
 * You can select/unselect the topics that you are using in the robot's knowledge.
 * Chat without character. Allows you to automate the questions and answers without using a character.
+* High quality voice available for payment accounts (French, German, Italian, English (US&EN)and Spanish)
 
 
 = Next Features =
 
 * Character 2D. You will able to chose new characters. For the first time characters will be 2D models.
 * Conversations time. You could chose how long conversations will be.
-* High voice quality available for payment accounts.
+
 
 Website: http://www.theclientrelationfactory.com/
 
