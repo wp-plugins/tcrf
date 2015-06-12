@@ -38,7 +38,8 @@ Chrome - All versions
 * New Knowledge Editor. You can define different topics and its questions and answers in an easy way. You can also define more than one initial sentence and default answers.
 * You can select/unselect the topics that you are using in the robot's knowledge.
 * Chat without character. Allows you to automate the questions and answers without using a character.
-* High quality voice available for payment accounts (French, German, Italian, English (US&EN)and Spanish)
+* High quality voice available for payment accounts (French, German, Italian, English (US&EN) and Spanish)
+* New language: Portuguese (male and female). Only for payment account.
 
 
 = Next Features =
